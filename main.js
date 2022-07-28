@@ -1,25 +1,24 @@
 //Query Selectors
-const calculator = document.querySelector('.calculator') //<---The whole calculator
+const calculator = document.querySelector('.calculator'); //<---The whole calculator
 const keys = document.querySelector('.ckeys') //<---The keys
-const display = document.querySelector('.cdisplay') //<---The output box
-let start = document.querySelector('.start');  
-const video1 = document.querySelector('.video1')
-let equal =document.querySelector('.equal');
-const video2 = document.querySelector('.video2')
+const display = document.querySelector('.cdisplay'); //<---The output box
+let start = document.querySelector('.start');  //<--- The start button on the first page
+const video1 = document.querySelector('.video1');//<---first video 
+let equal =document.querySelector('.equal');//<---The equal sign
+const video2 = document.querySelector('.video2')//<---The second video
 
 
 // Event Listeners
-keys.addEventListener('click', event => {
+  keys.addEventListener('click', event => {
     if (!event.target.closest('button')) return //<-- so the border does not click
   
-    //setting up the const
-    const key = event.target
-    const keyValue = key.textContent
-    const displayValue = display.textContent
-    const { type } = key.dataset
-    const { previousKeyType } = calculator.dataset
+  //setting up the const
+  const key = event.target
+  const keyValue = key.textContent
+  const displayValue = display.textContent
+  const { type } = key.dataset
+  const { previousKeyType } = calculator.dataset
   
-    
     //Changing the display of the input
     if (type === 'number') {
       if (
@@ -56,7 +55,6 @@ keys.addEventListener('click', event => {
       delete calculator.dataset.firstNumber
       delete calculator.dataset.operator
     }
-  
     calculator.dataset.previousKeyType = type
   })
   
@@ -71,42 +69,25 @@ keys.addEventListener('click', event => {
     if (op === 'divide') return firstNumber / secondNumber
   }
 
-  //The first click modal
+  //The first click through to the first video
   start.addEventListener('click', function () {
+    document.querySelector(".pstart").style.display = 'none';
+    document.querySelector('.startingp').style.display = 'none';
+    calculator.style.display = 'block';
+    video1.style.display="flex";
+    video1.autoplay=true;
+    video1.load();
+    setTimeout(function () { //<---setting the timeout funchtion for the first video
+      document.querySelector(".video1").style.display="none"; 
+    }, 12000);
+  });
 
-  document.querySelector(".pstart").style.display = 'none';
-  document.querySelector('.startingp').style.display = 'none';
-  calculator.style.display = 'block';
-  video1.style.display="flex";
-  video1.autoplay=true;
-  video1.load();
-  setTimeout(function () {
-    document.querySelector(".video1").style.display="none"; 
-  }, 11500);
-});
-
-  // setTimeout(function () {
-  //   document.querySelector(".video1").style.display="none";
-  // }, 11500);
-
+  //setting the click function for the second video when equal is clicked
   equal.addEventListener('click', function () {
-
-    // document.querySelector(".equal").style.display = 'flex';
     video2.style.display="flex";
     video2.autoplay=true;
     video2.load();
-    setTimeout(function () {
+    setTimeout(function () { //<---setting the timeout funchtion for the second video
       document.querySelector(".video2").style.display="none";
-    }, 5500);
+    }, 5800);
   });
-
-  // setTimeout(function () {
-  //   document.querySelector(".video2").style.display="none";
-  // }, 4999);
-
-
-// document.querySelector(".pstart").style.display = 'none';
-//   document.querySelector('.startingp').style.display = 'none';
-
-//   document.querySelector(".pstart").style.display = 'none';
-//   document.querySelector('.startingp').style.display = 'none';
