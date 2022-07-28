@@ -2,6 +2,7 @@
 const calculator = document.querySelector('.calculator') //<---The whole calculator
 const keys = document.querySelector('.ckeys') //<---The keys
 const display = document.querySelector('.cdisplay') //<---The output box
+let start = document.querySelector('.start');  
 
 
 // Event Listeners
@@ -67,4 +68,22 @@ keys.addEventListener('click', event => {
     if (op === 'divide') return firstNumber / secondNumber
   }
 
- 
+  //The first click modal
+  start.addEventListener('click', function () {
+
+  document.querySelector(".pstart").style.display = 'none';
+  document.querySelector('.startingp').style.display = 'none';
+  calculator.style.display = 'block';
+  //add the video event then timer to display none
+});
+
+
+// document.querySelector(".pstart").style.display = 'none';
+//   document.querySelector('.startingp').style.display = 'none';
+
+//   document.querySelector(".pstart").style.display = 'none';
+//   document.querySelector('.startingp').style.display = 'none';
+
+// setTimeout(function () {
+//   document.getElementById("fortune").innerHTML = fortunes[randomNumber];
+// }, 5500);

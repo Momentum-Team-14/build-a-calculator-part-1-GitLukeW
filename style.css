@@ -11,6 +11,9 @@ html {
 
 body {
     display:flex;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: overlap;
     background-color: rgb(193, 195, 195);
     background-image: url(./rss/hang-758x355.jpg);
     justify-content: center;
@@ -18,14 +21,19 @@ body {
     height: 100vh;
     background-size: cover;
     background-position: center;
+
     
 }
 
 .calculator {
+    display: none;
     box-shadow: 0 0 25px 0 black;
     border-radius: .5rem;
     overflow: hidden;
     background-color: grey;
+    /* border: 2px solid red; */
+    /* grid-area: "overlap";
+    justify-self: center; */
 }
 
 .cdisplay {
@@ -35,6 +43,7 @@ body {
     padding: 0.75rem 1rem;
     text-align: right;
     font-size: calc(1rem * 1.2 * 1.2 );
+    /* border: 2px solid rgb(39, 2, 173); */
 }
 
 .ckeys {
@@ -113,6 +122,90 @@ body {
     background-color: rgb(165, 165, 167);
 }
 
-/* [data-state = 'selected'] {
+[data-state = 'selected'] {
     background: grey;
-} */
+}
+ 
+/* The first modal and start button */
+.modal1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+   }
+
+   .pstart {
+    display: fixed;
+    height: 100vh;
+    width: 100vw;
+   }
+
+   .startingp {
+    position: fixed;
+    top: 0;
+    background-color: aqua; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    grid-area: "overlap";
+    z-index: -1;
+   } 
+    
+   /* The second modal and first video */
+   /* .modal1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+   }
+
+   .pstart {
+    display: fixed;
+    height: 100vh;
+    width: 100vw;
+   }
+
+   .video1 {
+    position: fixed;
+    top: 0;
+    background-color: aqua; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    grid-area: "overlap";
+    z-index: -1;
+   } 
+
+   /* The third modal and second video */
+   /* .video2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+   }
+
+   .modal2 {
+    display: fixed;
+    height: 100vh;
+    width: 100vw;
+   }
+
+   .video2 {
+    position: fixed;
+    top: 0;
+    background-color: aqua; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    grid-area: "overlap";
+    z-index: -1;
+   }   */
