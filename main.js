@@ -3,6 +3,9 @@ const calculator = document.querySelector('.calculator') //<---The whole calcula
 const keys = document.querySelector('.ckeys') //<---The keys
 const display = document.querySelector('.cdisplay') //<---The output box
 let start = document.querySelector('.start');  
+const video1 = document.querySelector('.video1')
+let equal =document.querySelector('.equal');
+const video2 = document.querySelector('.video2')
 
 
 // Event Listeners
@@ -74,8 +77,32 @@ keys.addEventListener('click', event => {
   document.querySelector(".pstart").style.display = 'none';
   document.querySelector('.startingp').style.display = 'none';
   calculator.style.display = 'block';
-  //add the video event then timer to display none
+  video1.style.display="flex";
+  video1.autoplay=true;
+  video1.load();
+  setTimeout(function () {
+    document.querySelector(".video1").style.display="none"; 
+  }, 11500);
 });
+
+  // setTimeout(function () {
+  //   document.querySelector(".video1").style.display="none";
+  // }, 11500);
+
+  equal.addEventListener('click', function () {
+
+    // document.querySelector(".equal").style.display = 'flex';
+    video2.style.display="flex";
+    video2.autoplay=true;
+    video2.load();
+    setTimeout(function () {
+      document.querySelector(".video2").style.display="none";
+    }, 5500);
+  });
+
+  // setTimeout(function () {
+  //   document.querySelector(".video2").style.display="none";
+  // }, 4999);
 
 
 // document.querySelector(".pstart").style.display = 'none';
@@ -83,7 +110,3 @@ keys.addEventListener('click', event => {
 
 //   document.querySelector(".pstart").style.display = 'none';
 //   document.querySelector('.startingp').style.display = 'none';
-
-// setTimeout(function () {
-//   document.getElementById("fortune").innerHTML = fortunes[randomNumber];
-// }, 5500);
