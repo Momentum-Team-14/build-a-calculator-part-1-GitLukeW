@@ -79,7 +79,7 @@ const video2 = document.querySelector('.video2')//<---The second video
     video1.load();
     setTimeout(function () { //<---setting the timeout funchtion for the first video
       document.querySelector(".video1").style.display="none"; 
-    }, 12000);
+    }, 12100);
   });
 
   //setting the click function for the second video when equal is clicked
@@ -89,5 +89,5 @@ const video2 = document.querySelector('.video2')//<---The second video
     video2.load();
     setTimeout(function () { //<---setting the timeout funchtion for the second video
       document.querySelector(".video2").style.display="none";
-    }, 5800);
+    }, 5880);
   });
